@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const correctPin = "1234"; // Change this to your desired PIN
+  const correctPin = "snakp1851"; // Change this to your desired PIN
 
   if (!sessionStorage.getItem('pinVerified')) {  // Check if the PIN has already been verified
       const modalHTML = `
