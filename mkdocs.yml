@@ -1,0 +1,6 @@
+site_name: AK VR Documentation
+theme:
+  name: material
+  custome_dir: custom_templates
+extra_javascript: 
+- custom.js

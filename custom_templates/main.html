@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- PIN Modal -->
+<div id="pinModal" style="position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.7); z-index:9999; display:flex; align-items:center; justify-content:center;">
+    <div style="background-color:white; padding:20px; border-radius:5px; width:300px;">
+        <h2>Enter PIN</h2>
+        <input type="password" id="pinInput" style="width:100%;">
+        <button onclick="checkPin()">Submit</button>
+    </div>
+</div>
+
+{{ super() }}
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+
+<script>
+    const correctPin = "1234"; // Change this to your desired PIN
+
+    function checkPin() {
+        const enteredPin = document.getElementById("pinInput").value;
+        if (enteredPin === correctPin) {
+            document.getElementById("pinModal").style.display = "none";
+        } else {
+            alert("Incorrect PIN. Please try again.");
+        }
+    }
+
+    // Optional: Make the 'Enter' key trigger the checkPin function
+    document.getElementById("pinInput").addEventListener("keyup", function(event) {
+        if (event.key === "Enter") {
+            checkPin();
+        }
+    });
+</script>
+{% endblock %}
