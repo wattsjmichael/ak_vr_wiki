@@ -1,4 +1,5 @@
 site_name: AK VR Documentation
+site_url: https://wattsjmichael.github.io/ak_vr_wiki
 theme:
   name: material
   custome_dir: custom_templates
